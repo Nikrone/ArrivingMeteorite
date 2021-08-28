@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ArrivingMeteorite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-home" translatesAutoresizingMaskIntoConstraints="NO" id="ume-mZ-Iih">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet-molten" translatesAutoresizingMaskIntoConstraints="NO" id="ML6-NF-oMz">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HII-Fj-Qk0">
+                                <rect key="frame" x="43" y="787" width="328" height="31"/>
+                                <connections>
+                                    <action selector="valueDoidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="bYq-gA-PQi"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HII-Fj-Qk0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="DCJ-1w-Jwg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HII-Fj-Qk0" secondAttribute="bottom" constant="45" id="GNc-We-mb7"/>
+                            <constraint firstItem="ume-mZ-Iih" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KDp-ek-vak"/>
+                            <constraint firstAttribute="bottom" secondItem="ume-mZ-Iih" secondAttribute="bottom" id="Tmc-Lf-ZBx"/>
+                            <constraint firstItem="ume-mZ-Iih" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ekE-TM-XGS"/>
+                            <constraint firstItem="ML6-NF-oMz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f9p-Ck-jDV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ume-mZ-Iih" secondAttribute="trailing" id="gus-sh-Tej"/>
+                            <constraint firstItem="ML6-NF-oMz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hhF-r5-GJW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HII-Fj-Qk0" secondAttribute="trailing" constant="45" id="zie-ci-IeB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="planetImageView" destination="ML6-NF-oMz" id="8yZ-2w-sfm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="78.348214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-home" width="1080" height="2340"/>
+        <image name="planet-molten" width="250" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
